@@ -13,6 +13,7 @@
 		D8F4036E2570A11C0031FEDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F4036D2570A11C0031FEDE /* Assets.xcassets */; };
 		D8F403712570A11C0031FEDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F4036F2570A11C0031FEDE /* LaunchScreen.storyboard */; };
 		D8F4037C2570A7C50031FEDE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D8F4037B2570A7C50031FEDE /* Alamofire */; };
+		D8F403802570A9950031FEDE /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4037F2570A9950031FEDE /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D8F4036D2570A11C0031FEDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F403702570A11C0031FEDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8F403722570A11C0031FEDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F4037F2570A9950031FEDE /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D8F403642570A1190031FEDE /* AppDelegate.swift */,
 				D8F403662570A1190031FEDE /* SceneDelegate.swift */,
 				D8F403682570A1190031FEDE /* ViewController.swift */,
+				D8F4037F2570A9950031FEDE /* BottomSheetViewController.swift */,
 				D8F4036D2570A11C0031FEDE /* Assets.xcassets */,
 				D8F4036F2570A11C0031FEDE /* LaunchScreen.storyboard */,
 				D8F403722570A11C0031FEDE /* Info.plist */,
@@ -144,6 +147,7 @@
 				D8F403692570A1190031FEDE /* ViewController.swift in Sources */,
 				D8F403652570A1190031FEDE /* AppDelegate.swift in Sources */,
 				D8F403672570A1190031FEDE /* SceneDelegate.swift in Sources */,
+				D8F403802570A9950031FEDE /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
