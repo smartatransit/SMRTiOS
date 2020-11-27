@@ -9,7 +9,17 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.backgroundColor = .white
+//        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"login.png"]];
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "train-stations-map-2020")?.draw(in: self.view.bounds)
+
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+
+        UIGraphicsEndImageContext()
+
+        view.backgroundColor = UIColor(patternImage: image)
+                                       
         addBottomSheetView()
     }
 
