@@ -10,14 +10,15 @@ import Alamofire
 class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "train-stations-map-2020")?.draw(in: self.view.bounds)
-
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-
-        UIGraphicsEndImageContext()
-
-        view.backgroundColor = UIColor(patternImage: image)
+        view.backgroundColor = .darkGray
+//        UIGraphicsBeginImageContext(self.view.frame.size)
+//        UIImage(named: "train-stations-map-2020")?.draw(in: self.view.bounds)
+//
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//
+//        UIGraphicsEndImageContext()
+//
+//        view.backgroundColor = UIColor(patternImage: image)
                                        
         addBottomSheetView()
     }

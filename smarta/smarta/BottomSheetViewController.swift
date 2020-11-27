@@ -7,25 +7,18 @@
 
 import UIKit
 
-extension BottomSheetViewController {
-    private enum State {
-        case partial
-        case full
-    }
-    
-    private enum Constant {
-        static let fullViewYPosition: CGFloat = 100
-        static var partialViewYPosition: CGFloat { UIScreen.main.bounds.height - 130 }
-    }
-}
-
 class BottomSheetViewController: UIViewController {
+    
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .white
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         view.addGestureRecognizer(gesture)
         roundViews()
+//        setupNavigationItems()
+        setupTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +27,20 @@ class BottomSheetViewController: UIViewController {
             self.moveView(state: .partial)
         })
     }
+    
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.isScrollEnabled = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    }
+    
+//    func setupNavigationItems() {
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .search)
+//    }
     
     private func moveView(state: State) {
         let yPosition = state == .partial ? Constant.partialViewYPosition : Constant.fullViewYPosition
@@ -65,5 +72,34 @@ class BottomSheetViewController: UIViewController {
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
     }
+    
+
 }
 
+extension BottomSheetViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        <#code#>
+    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        1
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+
+
+}
+
+extension BottomSheetViewController {
+    private enum State {
+        case partial
+        case full
+    }
+    
+    private enum Constant {
+        static let fullViewYPosition: CGFloat = 100
+        static var partialViewYPosition: CGFloat { UIScreen.main.bounds.height - 130 }
+    }
+}
