@@ -5,12 +5,11 @@
 //  Created by Julian A. Fordyce on 11/26/20.
 //
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"login.png"]];
-        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "train-stations-map-2020")?.draw(in: self.view.bounds)
 
@@ -21,6 +20,13 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor(patternImage: image)
                                        
         addBottomSheetView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AF.request("https://third-rail-insecure.services.smartatransit.com/static/stations").response { response in
+            debugPrint(response)
+        }
     }
 
     func addBottomSheetView() {
