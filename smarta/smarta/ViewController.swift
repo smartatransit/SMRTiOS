@@ -32,7 +32,6 @@ class ViewController: UIViewController {
 
     func addBottomSheetView() {
         let bottomSheetVC = BottomSheetViewController()
-        
         self.addChild(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
         bottomSheetVC.didMove(toParent: self)
