@@ -1,37 +1,24 @@
 //
-//  SearchResultsTableViewController.swift
+//  FavoritesTableViewController.swift
 //  smarta
 //
-//  Created by Julian A. Fordyce on 11/29/20.
+//  Created by Julian A. Fordyce on 11/30/20.
 //
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
-
-    let searchBar = UISearchBar()
+class FavoritesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-        setupSearchBar()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func setupSearchBar() {
-        searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.delegate = self
-        searchBar.showsCancelButton = true
-        searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = "Where to?"
-        searchBar.sizeToFit()
-    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,8 +86,4 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
-}
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    
 }

@@ -18,6 +18,7 @@
 		D8F403892574685E0031FEDE /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F403882574685E0031FEDE /* StationViewModel.swift */; };
 		D8F4038C257468AB0031FEDE /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4038B257468AB0031FEDE /* Station.swift */; };
 		D8F403932574B0D80031FEDE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F403922574B0D80031FEDE /* SearchResultsTableViewController.swift */; };
+		D8F4039825755A400031FEDE /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4039725755A400031FEDE /* FavoritesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D8F403882574685E0031FEDE /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
 		D8F4038B257468AB0031FEDE /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		D8F403922574B0D80031FEDE /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		D8F4039725755A400031FEDE /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				D8F403662570A1190031FEDE /* SceneDelegate.swift */,
 				D8F403682570A1190031FEDE /* ViewController.swift */,
 				D8F4037F2570A9950031FEDE /* BottomSheetViewController.swift */,
+				D8F4039725755A400031FEDE /* FavoritesTableViewController.swift */,
 				D8F403922574B0D80031FEDE /* SearchResultsTableViewController.swift */,
 				D8F403852574672A0031FEDE /* StationTableViewCell.swift */,
 				D8F403882574685E0031FEDE /* StationViewModel.swift */,
@@ -159,6 +162,7 @@
 				D8F403692570A1190031FEDE /* ViewController.swift in Sources */,
 				D8F4038C257468AB0031FEDE /* Station.swift in Sources */,
 				D8F403862574672A0031FEDE /* StationTableViewCell.swift in Sources */,
+				D8F4039825755A400031FEDE /* FavoritesTableViewController.swift in Sources */,
 				D8F403652570A1190031FEDE /* AppDelegate.swift in Sources */,
 				D8F403932574B0D80031FEDE /* SearchResultsTableViewController.swift in Sources */,
 				D8F403672570A1190031FEDE /* SceneDelegate.swift in Sources */,

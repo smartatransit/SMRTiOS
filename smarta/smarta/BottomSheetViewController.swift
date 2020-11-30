@@ -10,10 +10,7 @@ import UIKit
 class BottomSheetViewController: UIViewController {
     
     let tableView = UITableView()
-    
     let searchBar = UISearchBar()
-    
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +45,7 @@ class BottomSheetViewController: UIViewController {
     func setupSearchBar() {
         searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
         searchBar.delegate = self
-        searchBar.showsCancelButton = true
-        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Where to?"
         searchBar.sizeToFit()
     }
@@ -101,12 +97,16 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-//
+
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let searchBar = UISearchBar(frame: .zero)
-//        self.view.addSubview(searchBar)
-//        searchBar.translatesAutoresizingMaskIntoConstraints = false
-//        return searchBar
+//        let view = UIView()
+//        self.view.addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        "Title"
 //    }
     
 
