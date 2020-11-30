@@ -11,6 +11,10 @@ class BottomSheetViewController: UIViewController {
     
     let tableView = UITableView()
     
+    let searchBar = UISearchBar()
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -18,7 +22,9 @@ class BottomSheetViewController: UIViewController {
         view.addGestureRecognizer(gesture)
         roundViews()
 //        setupNavigationItems()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setupTableView()
+        setupSearchBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,6 +36,7 @@ class BottomSheetViewController: UIViewController {
     
     func setupTableView() {
         view.addSubview(tableView)
+        tableView.tableHeaderView = searchBar
         tableView.isScrollEnabled = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -38,6 +45,14 @@ class BottomSheetViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
+    func setupSearchBar() {
+        searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = "Where to?"
+        searchBar.sizeToFit()
+    }
 //    func setupNavigationItems() {
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .search)
 //    }
@@ -78,21 +93,33 @@ class BottomSheetViewController: UIViewController {
 
 extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        self.view.addSubview(view)
-        
-    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let searchBar = UISearchBar(frame: .zero)
+//        self.view.addSubview(searchBar)
+//        searchBar.translatesAutoresizingMaskIntoConstraints = false
+//        return searchBar
+//    }
     
 
+}
+
+extension BottomSheetViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        debugPrint("ABCD: TADA!")
+        self.searchBar.endEditing(true)
+        let vc = SearchResultsTableViewController()
+        modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension BottomSheetViewController {
