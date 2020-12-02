@@ -11,10 +11,10 @@ class StationTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = "stationCell"
     
-    let iconView: UIImage = {
+    let iconView: UIImageView = {
         let image = UIImage()
         let imageView = UIImageView(image: image)
-        return image
+        return imageView
     }()
     
     let titleLabel: UILabel = {
@@ -45,13 +45,40 @@ class StationTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var stationStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(descriptionLabel)
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    lazy var timeStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.addArrangedSubview(numericLabel)
+        stackView.addArrangedSubview(minuteLabel)
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    lazy var containerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.addArrangedSubview(stationStackView)
+        stackView.addArrangedSubview(timeStackView)
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    
+    
     override func layoutSubviews() {
         setupUI()
     }
     
     func setupUI() {
+        contentView.addSubview(iconView)
+        contentView.addSubview(containerStackView)
         
     }
-
-
 }
