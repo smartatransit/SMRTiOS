@@ -16,21 +16,15 @@ class SearchResultsTableViewController: UITableViewController {
 
         view.backgroundColor = .white
         setupSearchBar()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func setupSearchBar() {
         searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
-        searchBar.showsCancelButton = true
-        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Where to?"
         searchBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
     }
     // MARK: - Table view data source
 
@@ -102,5 +96,7 @@ class SearchResultsTableViewController: UITableViewController {
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
-    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+
+    }
 }

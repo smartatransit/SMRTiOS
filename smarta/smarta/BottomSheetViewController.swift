@@ -18,7 +18,6 @@ class BottomSheetViewController: UIViewController {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         view.addGestureRecognizer(gesture)
         roundViews()
-//        setupNavigationItems()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setupTableView()
         setupSearchBar()
@@ -49,9 +48,6 @@ class BottomSheetViewController: UIViewController {
         searchBar.placeholder = "Where to?"
         searchBar.sizeToFit()
     }
-//    func setupNavigationItems() {
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .search)
-//    }
     
     private func moveView(state: State) {
         let yPosition = state == .partial ? Constant.partialViewYPosition : Constant.fullViewYPosition
@@ -83,8 +79,6 @@ class BottomSheetViewController: UIViewController {
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
     }
-    
-
 }
 
 extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
@@ -96,20 +90,6 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return cell
     }
-    
-
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView()
-//        self.view.addSubview(view)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        "Title"
-//    }
-    
-
 }
 
 extension BottomSheetViewController: UISearchBarDelegate {
