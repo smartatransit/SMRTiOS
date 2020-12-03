@@ -11,9 +11,11 @@ class StationTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = "stationCell"
     
-    let iconView: UIImageView = {
-        let image = UIImage()
-        let imageView = UIImageView(image: image)
+    let iconView: UIView = {
+//        let image = UIImage()
+        let imageView = UIView()
+        imageView.backgroundColor = .blue
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -57,6 +59,7 @@ class StationTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.addArrangedSubview(numericLabel)
         stackView.addArrangedSubview(minuteLabel)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
         return stackView
@@ -66,7 +69,9 @@ class StationTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.addArrangedSubview(stationStackView)
         stackView.addArrangedSubview(timeStackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     
@@ -80,5 +85,15 @@ class StationTableViewCell: UITableViewCell {
         contentView.addSubview(iconView)
         contentView.addSubview(containerStackView)
         
+        NSLayoutConstraint.activate([
+            iconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            iconView.heightAnchor.constraint(equalToConstant: 40),
+            iconView.widthAnchor.constraint(equalToConstant: 40),
+            iconView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            containerStackView.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 8),
+            containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            containerStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
     }
 }

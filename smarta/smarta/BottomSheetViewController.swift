@@ -18,7 +18,7 @@ class BottomSheetViewController: UIViewController {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         view.addGestureRecognizer(gesture)
         roundViews()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(StationTableViewCell.self, forCellReuseIdentifier: StationTableViewCell.reuseIdentifier)
         setupTableView()
         setupSearchBar()
     }
@@ -32,6 +32,9 @@ class BottomSheetViewController: UIViewController {
     
     func setupTableView() {
         view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .singleLine
         tableView.tableHeaderView = searchBar
         tableView.isScrollEnabled = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,11 +86,14 @@ class BottomSheetViewController: UIViewController {
 
 extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else {
+            fatalError()
+        }
+        
         return cell
     }
 }
