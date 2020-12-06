@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83B8EF2257D386100FD4EFA /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B8EF1257D386100FD4EFA /* StationTableViewController.swift */; };
 		D8F403652570A1190031FEDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F403642570A1190031FEDE /* AppDelegate.swift */; };
 		D8F403672570A1190031FEDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F403662570A1190031FEDE /* SceneDelegate.swift */; };
 		D8F403692570A1190031FEDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F403682570A1190031FEDE /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D83B8EF1257D386100FD4EFA /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
 		D8F403612570A1190031FEDE /* smarta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smarta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F403642570A1190031FEDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8F403662570A1190031FEDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				D8F4037F2570A9950031FEDE /* BottomSheetViewController.swift */,
 				D8F4039725755A400031FEDE /* FavoritesTableViewController.swift */,
 				D8F403922574B0D80031FEDE /* SearchResultsTableViewController.swift */,
+				D83B8EF1257D386100FD4EFA /* StationTableViewController.swift */,
 				D8F403852574672A0031FEDE /* StationTableViewCell.swift */,
 				D8F403882574685E0031FEDE /* StationViewModel.swift */,
 				D8F4038B257468AB0031FEDE /* Station.swift */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83B8EF2257D386100FD4EFA /* StationTableViewController.swift in Sources */,
 				D8F403692570A1190031FEDE /* ViewController.swift in Sources */,
 				D8F4038C257468AB0031FEDE /* Station.swift in Sources */,
 				D8F403862574672A0031FEDE /* StationTableViewCell.swift in Sources */,

@@ -1,48 +1,45 @@
 //
-//  SearchResultsTableViewController.swift
+//  StationTableViewController.swift
 //  smarta
 //
-//  Created by Julian A. Fordyce on 11/29/20.
+//  Created by Julian A. Fordyce on 12/6/20.
 //
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
-
-    let searchBar = UISearchBar()
+class StationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-        setupSearchBar()
-        tableView.register(StationTableViewCell.self, forCellReuseIdentifier: StationTableViewCell.reuseIdentifier)
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func setupSearchBar() {
-        searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
-        searchBar.delegate = self
-        searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = "Where to?"
-        searchBar.sizeToFit()
-        tableView.tableHeaderView = searchBar
-    }
+
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else {
-            fatalError()
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,16 +86,4 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StationTableViewController()
-        modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-        
-    }
-}
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-
-    }
 }
